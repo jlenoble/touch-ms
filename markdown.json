@@ -1,0 +1,7 @@
+{
+  "build": "README.md",
+  "files": ["docs/index.md"],
+  "tableOfContents": {
+    "heading": "# touch-ms\n\nTouch, asynchronous and with millisecond granularity"
+  }
+}
