@@ -27,8 +27,9 @@
   "dependencies": {},
   "devDependencies": {
     "autoreload-gulp": "*",
+    "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "*",
-    "babel-preset-es2015": "*",
+    "babel-preset-env": "^1.6.1",
     "chai": "*",
     "del": "*",
     "eslint-config-google": "*",
@@ -41,7 +42,7 @@
     "gulp-sourcemaps": "*",
     "gulp-wrap": "*",
     "markdown-include": "*",
-    "muter": "*",
+    "muter": "^0.6.0",
     "plumb-gulp": "*"
   },
   "peerDependencies": {}
