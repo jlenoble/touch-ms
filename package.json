@@ -31,6 +31,7 @@
     "babel-plugin-add-module-exports": "*",
     "babel-preset-env": "^1.6.1",
     "chai": "*",
+    "cleanup-wrapper": "^0.3.0",
     "del": "*",
     "eslint-config-google": "*",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
@@ -43,7 +44,8 @@
     "gulp-wrap": "*",
     "markdown-include": "*",
     "muter": "^0.6.0",
-    "plumb-gulp": "*"
+    "plumb-gulp": "*",
+    "stat-again": "^0.3.0"
   },
   "peerDependencies": {}
 }
