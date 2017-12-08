@@ -1,12 +1,28 @@
-import Muter, {captured} from 'muter';
 import {expect} from 'chai';
-import TouchMs from '../src/touch-ms';
+import gulp from 'gulp';
+import {Stator} from 'stat-again';
+import {tmpDir} from 'cleanup-wrapper';
+import touchMs from '../src/touch-ms';
 
-describe('Testing TouchMs', function () {
-  const muter = Muter(console, 'log'); // eslint-disable-line new-cap
+describe('Testing touch', function () {
+  it(`mtime is updated`, tmpDir('build3', function () {
+    const glob = 'src/touch-ms.js';
+    const glob2 = 'build3/src/touch-ms.js';
+    const stator = new Stator(glob);
+    const stator2 = new Stator(glob2);
 
-  it(`Class TouchMs says 'Hello world!'`, captured(muter, function () {
-    new TouchMs();
-    expect(muter.getLogs()).to.equal('Hello world!\n');
+    return new Promise((resolve, reject) =>
+      gulp.src(glob, {base: process.cwd()})
+        .pipe(gulp.dest('build3'))
+        .on('error', reject)
+        .on('end', resolve))
+      .then(() => {
+        return touchMs(glob2);
+      }).then(({stats}) => {
+        expect(stats.mtime).not.to.be.undefined;
+        return stator2.isNewerThan(stator);
+      }).then(yes => {
+        expect(yes).to.be.true;
+      });
   }));
 });
