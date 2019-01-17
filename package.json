@@ -1,7 +1,7 @@
 {
   "name": "touch-ms",
   "description": "Touch, asynchronous and with millisecond granularity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [],
   "author": {
     "name": "Jason Lenoble",
